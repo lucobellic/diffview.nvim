@@ -317,7 +317,7 @@ function PathLib:join(...)
 
   for i = 1, table.maxn(segments) do
     local cur = segments[i]
-    if cur and cur ~= "" then
+    if cur and cur ~= "" and type(cur) == "string" then
       if #ret > 0 and not ret:sub(-1, -1):match("[\\/]") then
         ret = ret .. self.sep
       end
